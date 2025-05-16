@@ -6,7 +6,7 @@ This project explores adverse event data for commonly prescribed statin medicati
 
 **Live Project Links:**
 
-*   **Interactive Tableau Dashboard:** [https://public.tableau.com/app/profile/ullas.aradhya/viz/FAERS_Statin/Dashboard1?publish=yes]
+*   **Interactive Tableau Dashboard:** [FAERS_Statin](https://public.tableau.com/app/profile/ullas.aradhya/viz/FAERS_Statin/Dashboard1?publish=yes)
 
 ---
 
@@ -162,8 +162,8 @@ A rigorous validation process was conducted by loading the cleaned dataset into 
 
 ## Contact
 
-*   **Name:** [Ullas Aradhya]
-*   **LinkedIn:** [www.linkedin.com/in/ullas-aradhya]
-*   **GitHub:** [https://github.com/ullas-aradhya]
+*   **Name:** Ullas Aradhya
+*   **LinkedIn:** www.linkedin.com/in/ullas-aradhya
+*   **GitHub:** https://github.com/ullas-aradhya
 
 ---
