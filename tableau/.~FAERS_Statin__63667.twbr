@@ -1,0 +1,1919 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20251.25.0313.2002                               -->
+<workbook original-version='18.1' source-build='2025.1.0 (20251.25.0313.2002)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='cleaned_statin_ae+' inline='true' name='federated.0z584by1qv8k3h11t4nj408zaubz' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='cleaned_statin_ae' name='textscan.0qq5prp1olkkmz189tp401lun85x'>
+            <connection class='textscan' directory='/Users/ullas/Documents/Showcase Projects/Pharmacovigilance' filename='cleaned_statin_ae.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.0qq5prp1olkkmz189tp401lun85x' name='ae_cleaned.csv' table='[ae_cleaned#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='integer' name='report_id' ordinal='0' />
+              <column datatype='date' name='receive_date' ordinal='1' />
+              <column datatype='integer' name='serious' ordinal='2' />
+              <column datatype='string' name='report_country' ordinal='3' />
+              <column datatype='string' name='occurrence_country' ordinal='4' />
+              <column datatype='integer' name='source_qualification' ordinal='5' />
+              <column datatype='integer' name='drug_characterization' ordinal='6' />
+              <column datatype='string' name='medicinal_product' ordinal='7' />
+              <column datatype='string' name='generic_name' ordinal='8' />
+              <column datatype='string' name='brand_name' ordinal='9' />
+              <column datatype='string' name='reaction' ordinal='10' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0qq5prp1olkkmz189tp401lun85x' name='drug_characterization_codes.csv' table='[drug_characterization_codes#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='integer' name='drug_characterization' ordinal='0' />
+              <column datatype='string' name='drug_characterization_description' ordinal='1' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0qq5prp1olkkmz189tp401lun85x' name='serious_codes.csv' table='[serious_codes#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='integer' name='serious' ordinal='0' />
+              <column datatype='string' name='serious_description' ordinal='1' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0qq5prp1olkkmz189tp401lun85x' name='source_qualification_codes.csv' table='[source_qualification_codes#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='integer' name='source_qualification' ordinal='0' />
+              <column datatype='string' name='qualification_description' ordinal='1' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[brand_name]' value='[ae_cleaned.csv].[brand_name]' />
+          <map key='[drug_characterization (drug_characterization_codes.csv)]' value='[drug_characterization_codes.csv].[drug_characterization]' />
+          <map key='[drug_characterization]' value='[ae_cleaned.csv].[drug_characterization]' />
+          <map key='[drug_characterization_description]' value='[drug_characterization_codes.csv].[drug_characterization_description]' />
+          <map key='[generic_name]' value='[ae_cleaned.csv].[generic_name]' />
+          <map key='[medicinal_product]' value='[ae_cleaned.csv].[medicinal_product]' />
+          <map key='[occurrence_country]' value='[ae_cleaned.csv].[occurrence_country]' />
+          <map key='[qualification_description]' value='[source_qualification_codes.csv].[qualification_description]' />
+          <map key='[reaction]' value='[ae_cleaned.csv].[reaction]' />
+          <map key='[receive_date]' value='[ae_cleaned.csv].[receive_date]' />
+          <map key='[report_country]' value='[ae_cleaned.csv].[report_country]' />
+          <map key='[report_id]' value='[ae_cleaned.csv].[report_id]' />
+          <map key='[serious (serious_codes.csv)]' value='[serious_codes.csv].[serious]' />
+          <map key='[serious]' value='[ae_cleaned.csv].[serious]' />
+          <map key='[serious_description]' value='[serious_codes.csv].[serious_description]' />
+          <map key='[source_qualification (source_qualification_codes.csv)]' value='[source_qualification_codes.csv].[source_qualification]' />
+          <map key='[source_qualification]' value='[ae_cleaned.csv].[source_qualification]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ae_cleaned.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[drug_characterization_codes.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[serious_codes.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[source_qualification_codes.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>report_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[report_id]</local-name>
+            <parent-name>[ae_cleaned.csv]</parent-name>
+            <remote-alias>report_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>receive_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[receive_date]</local-name>
+            <parent-name>[ae_cleaned.csv]</parent-name>
+            <remote-alias>receive_date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>serious</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[serious]</local-name>
+            <parent-name>[ae_cleaned.csv]</parent-name>
+            <remote-alias>serious</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>report_country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[report_country]</local-name>
+            <parent-name>[ae_cleaned.csv]</parent-name>
+            <remote-alias>report_country</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>occurrence_country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[occurrence_country]</local-name>
+            <parent-name>[ae_cleaned.csv]</parent-name>
+            <remote-alias>occurrence_country</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>source_qualification</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[source_qualification]</local-name>
+            <parent-name>[ae_cleaned.csv]</parent-name>
+            <remote-alias>source_qualification</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>drug_characterization</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[drug_characterization]</local-name>
+            <parent-name>[ae_cleaned.csv]</parent-name>
+            <remote-alias>drug_characterization</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>medicinal_product</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[medicinal_product]</local-name>
+            <parent-name>[ae_cleaned.csv]</parent-name>
+            <remote-alias>medicinal_product</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>generic_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[generic_name]</local-name>
+            <parent-name>[ae_cleaned.csv]</parent-name>
+            <remote-alias>generic_name</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>brand_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[brand_name]</local-name>
+            <parent-name>[ae_cleaned.csv]</parent-name>
+            <remote-alias>brand_name</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reaction</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[reaction]</local-name>
+            <parent-name>[ae_cleaned.csv]</parent-name>
+            <remote-alias>reaction</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>drug_characterization</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[drug_characterization (drug_characterization_codes.csv)]</local-name>
+            <parent-name>[drug_characterization_codes.csv]</parent-name>
+            <remote-alias>drug_characterization</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[drug_characterization_codes.csv_98359E46FA654B0399A4408086C8D3ED]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>drug_characterization_description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[drug_characterization_description]</local-name>
+            <parent-name>[drug_characterization_codes.csv]</parent-name>
+            <remote-alias>drug_characterization_description</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[drug_characterization_codes.csv_98359E46FA654B0399A4408086C8D3ED]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>serious</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[serious (serious_codes.csv)]</local-name>
+            <parent-name>[serious_codes.csv]</parent-name>
+            <remote-alias>serious</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[serious_codes.csv_0FB0EC14234240F58D770A93B3CC6B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>serious_description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[serious_description]</local-name>
+            <parent-name>[serious_codes.csv]</parent-name>
+            <remote-alias>serious_description</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[serious_codes.csv_0FB0EC14234240F58D770A93B3CC6B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>source_qualification</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[source_qualification (source_qualification_codes.csv)]</local-name>
+            <parent-name>[source_qualification_codes.csv]</parent-name>
+            <remote-alias>source_qualification</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[source_qualification_codes.csv_BF95491C6B8A4FE7BD27C73CDCF34549]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>qualification_description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[qualification_description]</local-name>
+            <parent-name>[source_qualification_codes.csv]</parent-name>
+            <remote-alias>qualification_description</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[source_qualification_codes.csv_BF95491C6B8A4FE7BD27C73CDCF34549]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Reports' datatype='integer' name='[Calculation_1427711453997498368]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT([report_id])' />
+      </column>
+      <column caption='Qualification' datatype='string' name='[Calculation_1530942401727475712]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IFNULL([qualification_description], &apos;Unknown&apos;)' />
+      </column>
+      <column caption='Statin Group' datatype='string' name='[Calculation_2219500564527845376]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF CONTAINS([generic_name], &apos;ATORVASTATIN&apos;) THEN &apos;Atorvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;SIMVASTATIN&apos;) THEN &apos;Simvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;ROSUVASTATIN&apos;) THEN &apos;Rosuvastatin&apos;&#10;ELSE &apos;Other&apos;&#10;&#10;END' />
+      </column>
+      <column caption='Is Statin (Based on Generic Name)' datatype='string' name='[Calculation_4216706262604722176]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF CONTAINS([generic_name], &apos;ATORVASTATIN&apos;) THEN &apos;Atorvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;SIMVASTATIN&apos;) THEN &apos;Simvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;ROSUVASTATIN&apos;) THEN &apos;Rosuvastatin&apos;&#10;ELSE &apos;Other&apos;&#10;&#10;END' />
+      </column>
+      <column caption='ae_cleaned.csv' datatype='table' name='[__tableau_internal_object_id__].[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]' role='measure' type='quantitative' />
+      <column caption='drug_characterization_codes.csv' datatype='table' name='[__tableau_internal_object_id__].[drug_characterization_codes.csv_98359E46FA654B0399A4408086C8D3ED]' role='measure' type='quantitative' />
+      <column caption='serious_codes.csv' datatype='table' name='[__tableau_internal_object_id__].[serious_codes.csv_0FB0EC14234240F58D770A93B3CC6B66]' role='measure' type='quantitative' />
+      <column caption='source_qualification_codes.csv' datatype='table' name='[__tableau_internal_object_id__].[source_qualification_codes.csv_BF95491C6B8A4FE7BD27C73CDCF34549]' role='measure' type='quantitative' />
+      <column caption='Brand Name' datatype='string' name='[brand_name]' role='dimension' type='nominal' />
+      <column caption='Drug Characterization (Drug Characterization Codes.Csv)' datatype='integer' name='[drug_characterization (drug_characterization_codes.csv)]' role='measure' type='quantitative' />
+      <column caption='Drug Characterization' datatype='integer' name='[drug_characterization]' role='measure' type='quantitative' />
+      <column caption='Drug Characterization Description' datatype='string' name='[drug_characterization_description]' role='dimension' type='nominal' />
+      <column caption='Generic Name' datatype='string' name='[generic_name]' role='dimension' type='nominal' />
+      <column caption='Medicinal Product' datatype='string' name='[medicinal_product]' role='dimension' type='nominal' />
+      <column caption='Occurrence Country' datatype='string' name='[occurrence_country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Qualification Description' datatype='string' name='[qualification_description]' role='dimension' type='nominal' />
+      <column caption='Reaction' datatype='string' name='[reaction]' role='dimension' type='nominal' />
+      <column caption='Receive Date' datatype='date' name='[receive_date]' role='dimension' type='ordinal' />
+      <column caption='Report Country' datatype='string' name='[report_country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Report Id' datatype='integer' name='[report_id]' role='dimension' type='ordinal' />
+      <column caption='Serious (Serious Codes.Csv)' datatype='integer' name='[serious (serious_codes.csv)]' role='measure' type='quantitative' />
+      <column caption='Serious' datatype='integer' name='[serious]' role='measure' type='quantitative' />
+      <column caption='Serious Description' datatype='string' name='[serious_description]' role='dimension' type='nominal' />
+      <column caption='Source Qualification (Source Qualification Codes.Csv)' datatype='integer' name='[source_qualification (source_qualification_codes.csv)]' role='measure' type='quantitative' />
+      <column caption='Source Qualification' datatype='integer' name='[source_qualification]' role='measure' type='quantitative' />
+      <column-instance column='[receive_date]' derivation='Month' name='[mn:receive_date:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[serious_description]' derivation='None' name='[none:serious_description:nk]' pivot='key' type='nominal' />
+      <group caption='Action (MONTH(Receive Date))' hidden='true' name='[Action (MONTH(Receive Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[mn:receive_date:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Qualification)' hidden='true' name='[Action (Qualification)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_1530942401727475712]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Reaction)' hidden='true' name='[Action (Reaction)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[reaction]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Serious Description)' hidden='true' name='[Action (Serious Description)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[serious_description]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Statin Group,Reaction)' hidden='true' name='[Action (Statin Group,Reaction)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_2219500564527845376]' />
+          <groupfilter function='level-members' level='[reaction]' />
+        </groupfilter>
+      </group>
+      <group caption='Reactions' name='[Reactions]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+          <groupfilter function='member' level='[reaction]' member='&quot;Blood creatine phosphokinase increased&quot;' />
+          <groupfilter function='member' level='[reaction]' member='&quot;Muscle discomfort&quot;' />
+          <groupfilter function='member' level='[reaction]' member='&quot;Muscle fatigue&quot;' />
+          <groupfilter function='member' level='[reaction]' member='&quot;Muscle injury&quot;' />
+          <groupfilter function='member' level='[reaction]' member='&quot;Muscle rupture&quot;' />
+          <groupfilter function='member' level='[reaction]' member='&quot;Muscle spasms&quot;' />
+          <groupfilter function='member' level='[reaction]' member='&quot;Muscle strain&quot;' />
+          <groupfilter function='member' level='[reaction]' member='&quot;Muscular weakness&quot;' />
+          <groupfilter function='member' level='[reaction]' member='&quot;Musculoskeletal pain&quot;' />
+          <groupfilter function='member' level='[reaction]' member='&quot;Musculoskeletal stiffness&quot;' />
+          <groupfilter function='member' level='[reaction]' member='&quot;Myalgia&quot;' />
+          <groupfilter function='member' level='[reaction]' member='&quot;Myopathy&quot;' />
+          <groupfilter function='member' level='[reaction]' member='&quot;Rhabdomyolysis&quot;' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/tableau-temp/#TableauTemp_08t6c111dwxcpq1euruin1bw9k7j.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='05/16/2025 08:16:54 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8' table='[Extract].[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]' type='table' />
+            <relation name='drug_characterization_codes.csv_98359E46FA654B0399A4408086C8D3ED' table='[Extract].[drug_characterization_codes.csv_98359E46FA654B0399A4408086C8D3ED]' type='table' />
+            <relation name='serious_codes.csv_0FB0EC14234240F58D770A93B3CC6B66' table='[Extract].[serious_codes.csv_0FB0EC14234240F58D770A93B3CC6B66]' type='table' />
+            <relation name='source_qualification_codes.csv_BF95491C6B8A4FE7BD27C73CDCF34549' table='[Extract].[source_qualification_codes.csv_BF95491C6B8A4FE7BD27C73CDCF34549]' type='table' />
+          </relation>
+          <cols>
+            <map key='[brand_name]' value='[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8].[brand_name]' />
+            <map key='[drug_characterization (drug_characterization_codes.csv)]' value='[drug_characterization_codes.csv_98359E46FA654B0399A4408086C8D3ED].[drug_characterization]' />
+            <map key='[drug_characterization]' value='[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8].[drug_characterization]' />
+            <map key='[drug_characterization_description]' value='[drug_characterization_codes.csv_98359E46FA654B0399A4408086C8D3ED].[drug_characterization_description]' />
+            <map key='[generic_name]' value='[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8].[generic_name]' />
+            <map key='[medicinal_product]' value='[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8].[medicinal_product]' />
+            <map key='[occurrence_country]' value='[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8].[occurrence_country]' />
+            <map key='[qualification_description]' value='[source_qualification_codes.csv_BF95491C6B8A4FE7BD27C73CDCF34549].[qualification_description]' />
+            <map key='[reaction]' value='[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8].[reaction]' />
+            <map key='[receive_date]' value='[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8].[receive_date]' />
+            <map key='[report_country]' value='[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8].[report_country]' />
+            <map key='[report_id]' value='[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8].[report_id]' />
+            <map key='[serious (serious_codes.csv)]' value='[serious_codes.csv_0FB0EC14234240F58D770A93B3CC6B66].[serious]' />
+            <map key='[serious]' value='[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8].[serious]' />
+            <map key='[serious_description]' value='[serious_codes.csv_0FB0EC14234240F58D770A93B3CC6B66].[serious_description]' />
+            <map key='[source_qualification (source_qualification_codes.csv)]' value='[source_qualification_codes.csv_BF95491C6B8A4FE7BD27C73CDCF34549].[source_qualification]' />
+            <map key='[source_qualification]' value='[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8].[source_qualification]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>report_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[report_id]</local-name>
+              <parent-name>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</parent-name>
+              <remote-alias>report_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>ae_cleaned.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>20813</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>receive_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[receive_date]</local-name>
+              <parent-name>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</parent-name>
+              <remote-alias>receive_date</remote-alias>
+              <ordinal>1</ordinal>
+              <family>ae_cleaned.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>778</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>serious</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[serious]</local-name>
+              <parent-name>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</parent-name>
+              <remote-alias>serious</remote-alias>
+              <ordinal>2</ordinal>
+              <family>ae_cleaned.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>report_country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[report_country]</local-name>
+              <parent-name>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</parent-name>
+              <remote-alias>report_country</remote-alias>
+              <ordinal>3</ordinal>
+              <family>ae_cleaned.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>occurrence_country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[occurrence_country]</local-name>
+              <parent-name>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</parent-name>
+              <remote-alias>occurrence_country</remote-alias>
+              <ordinal>4</ordinal>
+              <family>ae_cleaned.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>source_qualification</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[source_qualification]</local-name>
+              <parent-name>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</parent-name>
+              <remote-alias>source_qualification</remote-alias>
+              <ordinal>5</ordinal>
+              <family>ae_cleaned.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>drug_characterization</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[drug_characterization]</local-name>
+              <parent-name>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</parent-name>
+              <remote-alias>drug_characterization</remote-alias>
+              <ordinal>6</ordinal>
+              <family>ae_cleaned.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>medicinal_product</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[medicinal_product]</local-name>
+              <parent-name>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</parent-name>
+              <remote-alias>medicinal_product</remote-alias>
+              <ordinal>7</ordinal>
+              <family>ae_cleaned.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>21</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>generic_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[generic_name]</local-name>
+              <parent-name>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</parent-name>
+              <remote-alias>generic_name</remote-alias>
+              <ordinal>8</ordinal>
+              <family>ae_cleaned.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>brand_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[brand_name]</local-name>
+              <parent-name>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</parent-name>
+              <remote-alias>brand_name</remote-alias>
+              <ordinal>9</ordinal>
+              <family>ae_cleaned.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>16</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>reaction</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[reaction]</local-name>
+              <parent-name>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</parent-name>
+              <remote-alias>reaction</remote-alias>
+              <ordinal>10</ordinal>
+              <family>ae_cleaned.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3656</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>drug_characterization</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[drug_characterization (drug_characterization_codes.csv)]</local-name>
+              <parent-name>[drug_characterization_codes.csv_98359E46FA654B0399A4408086C8D3ED]</parent-name>
+              <remote-alias>drug_characterization</remote-alias>
+              <ordinal>11</ordinal>
+              <family>drug_characterization_codes.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[drug_characterization_codes.csv_98359E46FA654B0399A4408086C8D3ED]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>drug_characterization_description</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[drug_characterization_description]</local-name>
+              <parent-name>[drug_characterization_codes.csv_98359E46FA654B0399A4408086C8D3ED]</parent-name>
+              <remote-alias>drug_characterization_description</remote-alias>
+              <ordinal>12</ordinal>
+              <family>drug_characterization_codes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[drug_characterization_codes.csv_98359E46FA654B0399A4408086C8D3ED]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>serious</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[serious (serious_codes.csv)]</local-name>
+              <parent-name>[serious_codes.csv_0FB0EC14234240F58D770A93B3CC6B66]</parent-name>
+              <remote-alias>serious</remote-alias>
+              <ordinal>13</ordinal>
+              <family>serious_codes.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[serious_codes.csv_0FB0EC14234240F58D770A93B3CC6B66]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>serious_description</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[serious_description]</local-name>
+              <parent-name>[serious_codes.csv_0FB0EC14234240F58D770A93B3CC6B66]</parent-name>
+              <remote-alias>serious_description</remote-alias>
+              <ordinal>14</ordinal>
+              <family>serious_codes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[serious_codes.csv_0FB0EC14234240F58D770A93B3CC6B66]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>source_qualification</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[source_qualification (source_qualification_codes.csv)]</local-name>
+              <parent-name>[source_qualification_codes.csv_BF95491C6B8A4FE7BD27C73CDCF34549]</parent-name>
+              <remote-alias>source_qualification</remote-alias>
+              <ordinal>15</ordinal>
+              <family>source_qualification_codes.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[source_qualification_codes.csv_BF95491C6B8A4FE7BD27C73CDCF34549]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>qualification_description</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[qualification_description]</local-name>
+              <parent-name>[source_qualification_codes.csv_BF95491C6B8A4FE7BD27C73CDCF34549]</parent-name>
+              <remote-alias>qualification_description</remote-alias>
+              <ordinal>16</ordinal>
+              <family>source_qualification_codes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[source_qualification_codes.csv_BF95491C6B8A4FE7BD27C73CDCF34549]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout common-percentage='1' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' user-set-layout-v2='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:serious_description:nk]' palette='red_gold_10_0' type='palette'>
+            <map to='#b71d3e'>
+              <bucket>&quot;Serious&quot;</bucket>
+            </map>
+            <map to='#f4d166'>
+              <bucket>&quot;Not Serious&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='source_qualification (source_qualification_codes.csv)' />
+        <field-sort-custom-order field='qualification_description' />
+        <field-sort-custom-order field='Calculation_1530942401727475712' />
+      </field-sort-info>
+      <object-graph>
+        <objects>
+          <object caption='ae_cleaned.csv' id='ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8'>
+            <properties context=''>
+              <relation connection='textscan.0qq5prp1olkkmz189tp401lun85x' name='ae_cleaned.csv' table='[ae_cleaned#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='integer' name='report_id' ordinal='0' />
+                  <column datatype='date' name='receive_date' ordinal='1' />
+                  <column datatype='integer' name='serious' ordinal='2' />
+                  <column datatype='string' name='report_country' ordinal='3' />
+                  <column datatype='string' name='occurrence_country' ordinal='4' />
+                  <column datatype='integer' name='source_qualification' ordinal='5' />
+                  <column datatype='integer' name='drug_characterization' ordinal='6' />
+                  <column datatype='string' name='medicinal_product' ordinal='7' />
+                  <column datatype='string' name='generic_name' ordinal='8' />
+                  <column datatype='string' name='brand_name' ordinal='9' />
+                  <column datatype='string' name='reaction' ordinal='10' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8' table='[Extract].[ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8]' type='table' />
+            </properties>
+          </object>
+          <object caption='drug_characterization_codes.csv' id='drug_characterization_codes.csv_98359E46FA654B0399A4408086C8D3ED'>
+            <properties context=''>
+              <relation connection='textscan.0qq5prp1olkkmz189tp401lun85x' name='drug_characterization_codes.csv' table='[drug_characterization_codes#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='integer' name='drug_characterization' ordinal='0' />
+                  <column datatype='string' name='drug_characterization_description' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='drug_characterization_codes.csv_98359E46FA654B0399A4408086C8D3ED' table='[Extract].[drug_characterization_codes.csv_98359E46FA654B0399A4408086C8D3ED]' type='table' />
+            </properties>
+          </object>
+          <object caption='serious_codes.csv' id='serious_codes.csv_0FB0EC14234240F58D770A93B3CC6B66'>
+            <properties context=''>
+              <relation connection='textscan.0qq5prp1olkkmz189tp401lun85x' name='serious_codes.csv' table='[serious_codes#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='integer' name='serious' ordinal='0' />
+                  <column datatype='string' name='serious_description' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='serious_codes.csv_0FB0EC14234240F58D770A93B3CC6B66' table='[Extract].[serious_codes.csv_0FB0EC14234240F58D770A93B3CC6B66]' type='table' />
+            </properties>
+          </object>
+          <object caption='source_qualification_codes.csv' id='source_qualification_codes.csv_BF95491C6B8A4FE7BD27C73CDCF34549'>
+            <properties context=''>
+              <relation connection='textscan.0qq5prp1olkkmz189tp401lun85x' name='source_qualification_codes.csv' table='[source_qualification_codes#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='integer' name='source_qualification' ordinal='0' />
+                  <column datatype='string' name='qualification_description' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='source_qualification_codes.csv_BF95491C6B8A4FE7BD27C73CDCF34549' table='[Extract].[source_qualification_codes.csv_BF95491C6B8A4FE7BD27C73CDCF34549]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[drug_characterization]' />
+              <expression op='[drug_characterization (drug_characterization_codes.csv)]' />
+            </expression>
+            <first-end-point object-id='ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8' />
+            <second-end-point object-id='drug_characterization_codes.csv_98359E46FA654B0399A4408086C8D3ED' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[serious]' />
+              <expression op='[serious (serious_codes.csv)]' />
+            </expression>
+            <first-end-point object-id='ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8' />
+            <second-end-point object-id='serious_codes.csv_0FB0EC14234240F58D770A93B3CC6B66' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[source_qualification]' />
+              <expression op='[source_qualification (source_qualification_codes.csv)]' />
+            </expression>
+            <first-end-point object-id='ae_cleaned.csv_A5A6966548E94AD2929608B1CFCDCDA8' />
+            <second-end-point object-id='source_qualification_codes.csv_BF95491C6B8A4FE7BD27C73CDCF34549' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <shared-views>
+    <shared-view name='federated.0z584by1qv8k3h11t4nj408zaubz'>
+      <datasources>
+        <datasource caption='cleaned_statin_ae+' name='federated.0z584by1qv8k3h11t4nj408zaubz' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0z584by1qv8k3h11t4nj408zaubz'>
+        <column caption='Qualification' datatype='string' name='[Calculation_1530942401727475712]' role='dimension' type='nominal'>
+          <calculation class='tableau' formula='IFNULL([qualification_description], &apos;Unknown&apos;)' />
+        </column>
+        <column caption='Is Statin (Based on Generic Name)' datatype='string' name='[Calculation_4216706262604722176]' role='dimension' type='nominal'>
+          <calculation class='tableau' formula='IF CONTAINS([generic_name], &apos;ATORVASTATIN&apos;) THEN &apos;Atorvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;SIMVASTATIN&apos;) THEN &apos;Simvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;ROSUVASTATIN&apos;) THEN &apos;Rosuvastatin&apos;&#10;ELSE &apos;Other&apos;&#10;&#10;END' />
+        </column>
+        <column caption='Drug Characterization Description' datatype='string' name='[drug_characterization_description]' role='dimension' type='nominal' />
+        <column-instance column='[Calculation_1530942401727475712]' derivation='None' name='[none:Calculation_1530942401727475712:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Calculation_4216706262604722176]' derivation='None' name='[none:Calculation_4216706262604722176:nk]' pivot='key' type='nominal' />
+        <column-instance column='[drug_characterization_description]' derivation='None' name='[none:drug_characterization_description:nk]' pivot='key' type='nominal' />
+        <column-instance column='[receive_date]' derivation='None' name='[none:receive_date:qk]' pivot='key' type='quantitative' />
+        <column caption='Receive Date' datatype='date' name='[receive_date]' role='dimension' type='ordinal' />
+        <column-instance column='[receive_date]' derivation='Year' name='[yr:receive_date:ok]' pivot='key' type='ordinal' />
+      </datasource-dependencies>
+      <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_1530942401727475712:nk]'>
+        <groupfilter function='level-members' level='[none:Calculation_1530942401727475712:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+        <target field='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_1530942401727475712:nk]' />
+      </filter>
+      <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_4216706262604722176:nk]'>
+        <groupfilter function='level-members' level='[none:Calculation_4216706262604722176:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+        <target field='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_4216706262604722176:nk]' />
+      </filter>
+      <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:drug_characterization_description:nk]'>
+        <groupfilter function='member' level='[none:drug_characterization_description:nk]' member='&quot;Suspect Drug&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+        <target field='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:drug_characterization_description:nk]' />
+      </filter>
+      <filter class='quantitative' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:receive_date:qk]' included-values='in-range'>
+        <min>#2020-01-01#</min>
+        <max>#2020-12-31#</max>
+        <target field='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:receive_date:qk]' />
+      </filter>
+      <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[yr:receive_date:ok]'>
+        <groupfilter function='member' level='[yr:receive_date:ok]' member='2020' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+        <target field='[federated.0z584by1qv8k3h11t4nj408zaubz].[yr:receive_date:ok]' />
+      </filter>
+    </shared-view>
+  </shared-views>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1_939CF3F06C584629ADAA6D6FE8ECF064]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Serious vs Not-Serious' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <action caption='Filter 3 (generated)' name='[Action3_90364CE8A5D14E07A79E0988F1BDC40B]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Trend' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <action caption='Filter 2 (generated)' name='[Action4_1760E0EAD4C3486BBC2A5740A5380EA0]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Most Common Reported Issues' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <action caption='Filter 5 (generated)' name='[Action5_132244AFAB474E58B527EF396060DCE9]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Source Breakdown' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Most Common Reported Issues'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_statin_ae+' name='federated.0z584by1qv8k3h11t4nj408zaubz' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0z584by1qv8k3h11t4nj408zaubz'>
+            <column caption='Reports' datatype='integer' name='[Calculation_1427711453997498368]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([report_id])' />
+            </column>
+            <column caption='Qualification' datatype='string' name='[Calculation_1530942401727475712]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IFNULL([qualification_description], &apos;Unknown&apos;)' />
+            </column>
+            <column caption='Is Statin (Based on Generic Name)' datatype='string' name='[Calculation_4216706262604722176]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF CONTAINS([generic_name], &apos;ATORVASTATIN&apos;) THEN &apos;Atorvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;SIMVASTATIN&apos;) THEN &apos;Simvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;ROSUVASTATIN&apos;) THEN &apos;Rosuvastatin&apos;&#10;ELSE &apos;Other&apos;&#10;&#10;END' />
+            </column>
+            <column caption='Drug Characterization Description' datatype='string' name='[drug_characterization_description]' role='dimension' type='nominal' />
+            <column caption='Generic Name' datatype='string' name='[generic_name]' role='dimension' type='nominal' />
+            <column-instance column='[receive_date]' derivation='Month' name='[mn:receive_date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_1530942401727475712]' derivation='None' name='[none:Calculation_1530942401727475712:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_4216706262604722176]' derivation='None' name='[none:Calculation_4216706262604722176:nk]' pivot='key' type='nominal' />
+            <column-instance column='[drug_characterization_description]' derivation='None' name='[none:drug_characterization_description:nk]' pivot='key' type='nominal' />
+            <column-instance column='[reaction]' derivation='None' name='[none:reaction:nk]' pivot='key' type='nominal' />
+            <column-instance column='[receive_date]' derivation='None' name='[none:receive_date:qk]' pivot='key' type='quantitative' />
+            <column caption='Qualification Description' datatype='string' name='[qualification_description]' role='dimension' type='nominal' />
+            <column caption='Reaction' datatype='string' name='[reaction]' role='dimension' type='nominal' />
+            <column caption='Receive Date' datatype='date' name='[receive_date]' role='dimension' type='ordinal' />
+            <column caption='Report Id' datatype='integer' name='[report_id]' role='dimension' type='ordinal' />
+            <column caption='Serious Description' datatype='string' name='[serious_description]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1427711453997498368]' derivation='User' name='[usr:Calculation_1427711453997498368:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[receive_date]' derivation='Year' name='[yr:receive_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (MONTH(Receive Date))]'>
+            <groupfilter function='level-members' level='[mn:receive_date:ok]' user:ui-action-filter='[Action3_90364CE8A5D14E07A79E0988F1BDC40B]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Qualification)]'>
+            <groupfilter function='level-members' level='[Calculation_1530942401727475712]' user:ui-action-filter='[Action5_132244AFAB474E58B527EF396060DCE9]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Serious Description)]'>
+            <groupfilter function='member' level='[serious_description]' member='&quot;Serious&quot;' user:ui-action-filter='[Action1_939CF3F06C584629ADAA6D6FE8ECF064]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:reaction:nk]'>
+            <groupfilter count='15' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='[Calculation_1427711453997498368]' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:reaction:nk]' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-manual-selection-is-empty='true' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <computed-sort column='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:reaction:nk]' direction='DESC' using='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' />
+          <slices>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:reaction:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:receive_date:qk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Qualification)]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:drug_characterization_description:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_4216706262604722176:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (MONTH(Receive Date))]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[yr:receive_date:ok]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_1530942401727475712:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Serious Description)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' palette='sunrise_sunset_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' />
+              <color column='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' />
+              <text column='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:reaction:nk]' />
+              <text column='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{0A864FF3-C297-49A6-835C-51C1936F1373}' />
+    </worksheet>
+    <worksheet name='Mucle-Related Events'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_statin_ae+' name='federated.0z584by1qv8k3h11t4nj408zaubz' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0z584by1qv8k3h11t4nj408zaubz'>
+            <column caption='Reports' datatype='integer' name='[Calculation_1427711453997498368]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([report_id])' />
+            </column>
+            <column caption='Qualification' datatype='string' name='[Calculation_1530942401727475712]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IFNULL([qualification_description], &apos;Unknown&apos;)' />
+            </column>
+            <column caption='Statin Group' datatype='string' name='[Calculation_2219500564527845376]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF CONTAINS([generic_name], &apos;ATORVASTATIN&apos;) THEN &apos;Atorvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;SIMVASTATIN&apos;) THEN &apos;Simvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;ROSUVASTATIN&apos;) THEN &apos;Rosuvastatin&apos;&#10;ELSE &apos;Other&apos;&#10;&#10;END' />
+            </column>
+            <column caption='Is Statin (Based on Generic Name)' datatype='string' name='[Calculation_4216706262604722176]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF CONTAINS([generic_name], &apos;ATORVASTATIN&apos;) THEN &apos;Atorvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;SIMVASTATIN&apos;) THEN &apos;Simvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;ROSUVASTATIN&apos;) THEN &apos;Rosuvastatin&apos;&#10;ELSE &apos;Other&apos;&#10;&#10;END' />
+            </column>
+            <column caption='Drug Characterization Description' datatype='string' name='[drug_characterization_description]' role='dimension' type='nominal' />
+            <column caption='Generic Name' datatype='string' name='[generic_name]' role='dimension' type='nominal' />
+            <column-instance column='[receive_date]' derivation='Month' name='[mn:receive_date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_1530942401727475712]' derivation='None' name='[none:Calculation_1530942401727475712:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2219500564527845376]' derivation='None' name='[none:Calculation_2219500564527845376:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_4216706262604722176]' derivation='None' name='[none:Calculation_4216706262604722176:nk]' pivot='key' type='nominal' />
+            <column-instance column='[drug_characterization_description]' derivation='None' name='[none:drug_characterization_description:nk]' pivot='key' type='nominal' />
+            <column-instance column='[reaction]' derivation='None' name='[none:reaction:nk]' pivot='key' type='nominal' />
+            <column-instance column='[receive_date]' derivation='None' name='[none:receive_date:qk]' pivot='key' type='quantitative' />
+            <column caption='Qualification Description' datatype='string' name='[qualification_description]' role='dimension' type='nominal' />
+            <column caption='Reaction' datatype='string' name='[reaction]' role='dimension' type='nominal' />
+            <column caption='Receive Date' datatype='date' name='[receive_date]' role='dimension' type='ordinal' />
+            <column caption='Report Id' datatype='integer' name='[report_id]' role='dimension' type='ordinal' />
+            <column caption='Serious Description' datatype='string' name='[serious_description]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1427711453997498368]' derivation='User' name='[usr:Calculation_1427711453997498368:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[receive_date]' derivation='Year' name='[yr:receive_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (MONTH(Receive Date))]'>
+            <groupfilter function='level-members' level='[mn:receive_date:ok]' user:ui-action-filter='[Action3_90364CE8A5D14E07A79E0988F1BDC40B]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Qualification)]'>
+            <groupfilter function='level-members' level='[Calculation_1530942401727475712]' user:ui-action-filter='[Action5_132244AFAB474E58B527EF396060DCE9]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Reaction)]'>
+            <groupfilter function='level-members' level='[reaction]' user:ui-action-filter='[Action4_1760E0EAD4C3486BBC2A5740A5380EA0]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Serious Description)]'>
+            <groupfilter function='member' level='[serious_description]' member='&quot;Serious&quot;' user:ui-action-filter='[Action1_939CF3F06C584629ADAA6D6FE8ECF064]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Reactions]' />
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_2219500564527845376:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Calculation_2219500564527845376:nk]' member='&quot;Atorvastatin&quot;' />
+              <groupfilter function='member' level='[none:Calculation_2219500564527845376:nk]' member='&quot;Rosuvastatin&quot;' />
+              <groupfilter function='member' level='[none:Calculation_2219500564527845376:nk]' member='&quot;Simvastatin&quot;' />
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:reaction:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' shelf='columns'>
+              <sort-filter-info>
+                <sort-filter level-name='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_2219500564527845376:nk]' member-value='&quot;Atorvastatin&quot;' />
+              </sort-filter-info>
+            </shelf-sort-v2>
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_2219500564527845376:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Reactions]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Qualification)]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:drug_characterization_description:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_4216706262604722176:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (MONTH(Receive Date))]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[yr:receive_date:ok]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:receive_date:qk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Reaction)]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_1530942401727475712:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Serious Description)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='width' field='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' value='16' />
+            <format attr='height' field='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:reaction:nk]' value='99' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:reaction:nk]' value='59' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_2219500564527845376:nk]' value='92' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:reaction:nk]' value='-90' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' palette='sunrise_sunset_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-orientation' value='0' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_2219500564527845376:nk] * [federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk])</rows>
+        <cols>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:reaction:nk]</cols>
+      </table>
+      <simple-id uuid='{74E63A7E-4535-4462-BE7E-D113413BF6FF}' />
+    </worksheet>
+    <worksheet name='Serious vs Not-Serious'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_statin_ae+' name='federated.0z584by1qv8k3h11t4nj408zaubz' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0z584by1qv8k3h11t4nj408zaubz'>
+            <column caption='Reports' datatype='integer' name='[Calculation_1427711453997498368]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([report_id])' />
+            </column>
+            <column caption='Qualification' datatype='string' name='[Calculation_1530942401727475712]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IFNULL([qualification_description], &apos;Unknown&apos;)' />
+            </column>
+            <column caption='Is Statin (Based on Generic Name)' datatype='string' name='[Calculation_4216706262604722176]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF CONTAINS([generic_name], &apos;ATORVASTATIN&apos;) THEN &apos;Atorvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;SIMVASTATIN&apos;) THEN &apos;Simvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;ROSUVASTATIN&apos;) THEN &apos;Rosuvastatin&apos;&#10;ELSE &apos;Other&apos;&#10;&#10;END' />
+            </column>
+            <column caption='Drug Characterization Description' datatype='string' name='[drug_characterization_description]' role='dimension' type='nominal' />
+            <column caption='Generic Name' datatype='string' name='[generic_name]' role='dimension' type='nominal' />
+            <column-instance column='[receive_date]' derivation='Month' name='[mn:receive_date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_1530942401727475712]' derivation='None' name='[none:Calculation_1530942401727475712:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_4216706262604722176]' derivation='None' name='[none:Calculation_4216706262604722176:nk]' pivot='key' type='nominal' />
+            <column-instance column='[drug_characterization_description]' derivation='None' name='[none:drug_characterization_description:nk]' pivot='key' type='nominal' />
+            <column-instance column='[receive_date]' derivation='None' name='[none:receive_date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[serious_description]' derivation='None' name='[none:serious_description:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1427711453997498368]' derivation='User' name='[pcto:usr:Calculation_1427711453997498368:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column caption='Qualification Description' datatype='string' name='[qualification_description]' role='dimension' type='nominal' />
+            <column caption='Reaction' datatype='string' name='[reaction]' role='dimension' type='nominal' />
+            <column caption='Receive Date' datatype='date' name='[receive_date]' role='dimension' type='ordinal' />
+            <column caption='Report Id' datatype='integer' name='[report_id]' role='dimension' type='ordinal' />
+            <column caption='Serious Description' datatype='string' name='[serious_description]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1427711453997498368]' derivation='User' name='[usr:Calculation_1427711453997498368:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[receive_date]' derivation='Year' name='[yr:receive_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (MONTH(Receive Date))]'>
+            <groupfilter function='level-members' level='[mn:receive_date:ok]' user:ui-action-filter='[Action3_90364CE8A5D14E07A79E0988F1BDC40B]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Qualification)]'>
+            <groupfilter function='level-members' level='[Calculation_1530942401727475712]' user:ui-action-filter='[Action5_132244AFAB474E58B527EF396060DCE9]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Reaction)]'>
+            <groupfilter function='level-members' level='[reaction]' user:ui-action-filter='[Action4_1760E0EAD4C3486BBC2A5740A5380EA0]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Qualification)]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:drug_characterization_description:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_4216706262604722176:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (MONTH(Receive Date))]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:receive_date:qk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[yr:receive_date:ok]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Reaction)]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_1530942401727475712:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:serious_description:nk]' />
+              <wedge-size column='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' />
+              <text column='[federated.0z584by1qv8k3h11t4nj408zaubz].[pcto:usr:Calculation_1427711453997498368:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{BDA2173E-B2D7-42AD-BF09-7C6847F87E12}' />
+    </worksheet>
+    <worksheet name='Source Breakdown'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_statin_ae+' name='federated.0z584by1qv8k3h11t4nj408zaubz' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0z584by1qv8k3h11t4nj408zaubz'>
+            <column caption='Reports' datatype='integer' name='[Calculation_1427711453997498368]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([report_id])' />
+            </column>
+            <column caption='Qualification' datatype='string' name='[Calculation_1530942401727475712]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IFNULL([qualification_description], &apos;Unknown&apos;)' />
+            </column>
+            <column caption='Is Statin (Based on Generic Name)' datatype='string' name='[Calculation_4216706262604722176]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF CONTAINS([generic_name], &apos;ATORVASTATIN&apos;) THEN &apos;Atorvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;SIMVASTATIN&apos;) THEN &apos;Simvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;ROSUVASTATIN&apos;) THEN &apos;Rosuvastatin&apos;&#10;ELSE &apos;Other&apos;&#10;&#10;END' />
+            </column>
+            <column caption='Drug Characterization Description' datatype='string' name='[drug_characterization_description]' role='dimension' type='nominal' />
+            <column caption='Generic Name' datatype='string' name='[generic_name]' role='dimension' type='nominal' />
+            <column-instance column='[receive_date]' derivation='Month' name='[mn:receive_date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_1530942401727475712]' derivation='None' name='[none:Calculation_1530942401727475712:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_4216706262604722176]' derivation='None' name='[none:Calculation_4216706262604722176:nk]' pivot='key' type='nominal' />
+            <column-instance column='[drug_characterization_description]' derivation='None' name='[none:drug_characterization_description:nk]' pivot='key' type='nominal' />
+            <column-instance column='[qualification_description]' derivation='None' name='[none:qualification_description:nk]' pivot='key' type='nominal' />
+            <column-instance column='[receive_date]' derivation='None' name='[none:receive_date:qk]' pivot='key' type='quantitative' />
+            <column caption='Qualification Description' datatype='string' name='[qualification_description]' role='dimension' type='nominal' />
+            <column caption='Reaction' datatype='string' name='[reaction]' role='dimension' type='nominal' />
+            <column caption='Receive Date' datatype='date' name='[receive_date]' role='dimension' type='ordinal' />
+            <column caption='Report Id' datatype='integer' name='[report_id]' role='dimension' type='ordinal' />
+            <column caption='Serious Description' datatype='string' name='[serious_description]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1427711453997498368]' derivation='User' name='[usr:Calculation_1427711453997498368:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[receive_date]' derivation='Year' name='[yr:receive_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (MONTH(Receive Date))]'>
+            <groupfilter function='level-members' level='[mn:receive_date:ok]' user:ui-action-filter='[Action3_90364CE8A5D14E07A79E0988F1BDC40B]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Reaction)]'>
+            <groupfilter function='level-members' level='[reaction]' user:ui-action-filter='[Action4_1760E0EAD4C3486BBC2A5740A5380EA0]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Serious Description)]'>
+            <groupfilter function='member' level='[serious_description]' member='&quot;Serious&quot;' user:ui-action-filter='[Action1_939CF3F06C584629ADAA6D6FE8ECF064]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:qualification_description:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:qualification_description:nk]' member='%null%' />
+              <groupfilter function='member' level='[none:qualification_description:nk]' member='&quot;Consumer or Non-Health Professional&quot;' />
+              <groupfilter function='member' level='[none:qualification_description:nk]' member='&quot;Lawyer&quot;' />
+              <groupfilter function='member' level='[none:qualification_description:nk]' member='&quot;Other Health Professional&quot;' />
+              <groupfilter function='member' level='[none:qualification_description:nk]' member='&quot;Pharmacist&quot;' />
+              <groupfilter function='member' level='[none:qualification_description:nk]' member='&quot;Physician&quot;' />
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_1530942401727475712:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:qualification_description:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:drug_characterization_description:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_4216706262604722176:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (MONTH(Receive Date))]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:receive_date:qk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[yr:receive_date:ok]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Reaction)]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_1530942401727475712:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Serious Description)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' palette='sunrise_sunset_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_1530942401727475712:nk]</rows>
+        <cols>[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]</cols>
+      </table>
+      <simple-id uuid='{0AA010AB-A336-4F0B-A714-689B10F2958A}' />
+    </worksheet>
+    <worksheet name='Trend'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_statin_ae+' name='federated.0z584by1qv8k3h11t4nj408zaubz' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0z584by1qv8k3h11t4nj408zaubz'>
+            <column caption='Reports' datatype='integer' name='[Calculation_1427711453997498368]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([report_id])' />
+            </column>
+            <column caption='Qualification' datatype='string' name='[Calculation_1530942401727475712]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IFNULL([qualification_description], &apos;Unknown&apos;)' />
+            </column>
+            <column caption='Is Statin (Based on Generic Name)' datatype='string' name='[Calculation_4216706262604722176]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF CONTAINS([generic_name], &apos;ATORVASTATIN&apos;) THEN &apos;Atorvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;SIMVASTATIN&apos;) THEN &apos;Simvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;ROSUVASTATIN&apos;) THEN &apos;Rosuvastatin&apos;&#10;ELSE &apos;Other&apos;&#10;&#10;END' />
+            </column>
+            <column caption='Drug Characterization Description' datatype='string' name='[drug_characterization_description]' role='dimension' type='nominal' />
+            <column caption='Generic Name' datatype='string' name='[generic_name]' role='dimension' type='nominal' />
+            <column-instance column='[receive_date]' derivation='Month' name='[mn:receive_date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_1530942401727475712]' derivation='None' name='[none:Calculation_1530942401727475712:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_4216706262604722176]' derivation='None' name='[none:Calculation_4216706262604722176:nk]' pivot='key' type='nominal' />
+            <column-instance column='[drug_characterization_description]' derivation='None' name='[none:drug_characterization_description:nk]' pivot='key' type='nominal' />
+            <column-instance column='[receive_date]' derivation='None' name='[none:receive_date:qk]' pivot='key' type='quantitative' />
+            <column caption='Qualification Description' datatype='string' name='[qualification_description]' role='dimension' type='nominal' />
+            <column caption='Reaction' datatype='string' name='[reaction]' role='dimension' type='nominal' />
+            <column caption='Receive Date' datatype='date' name='[receive_date]' role='dimension' type='ordinal' />
+            <column caption='Report Id' datatype='integer' name='[report_id]' role='dimension' type='ordinal' />
+            <column caption='Serious Description' datatype='string' name='[serious_description]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1427711453997498368]' derivation='User' name='[usr:Calculation_1427711453997498368:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[receive_date]' derivation='Year' name='[yr:receive_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Qualification)]'>
+            <groupfilter function='level-members' level='[Calculation_1530942401727475712]' user:ui-action-filter='[Action5_132244AFAB474E58B527EF396060DCE9]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Reaction)]'>
+            <groupfilter function='level-members' level='[reaction]' user:ui-action-filter='[Action4_1760E0EAD4C3486BBC2A5740A5380EA0]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Serious Description)]'>
+            <groupfilter function='member' level='[serious_description]' member='&quot;Serious&quot;' user:ui-action-filter='[Action1_939CF3F06C584629ADAA6D6FE8ECF064]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[yr:receive_date:ok]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Qualification)]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:drug_characterization_description:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_4216706262604722176:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:receive_date:qk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Reaction)]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_1530942401727475712:nk]</column>
+            <column>[federated.0z584by1qv8k3h11t4nj408zaubz].[Action (Serious Description)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' palette='sunrise_sunset_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]</rows>
+        <cols>[federated.0z584by1qv8k3h11t4nj408zaubz].[mn:receive_date:ok]</cols>
+      </table>
+      <simple-id uuid='{28B88ECA-6FAF-488B-AF10-53711E09E3D1}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#ffffff'>Statin Medications: Adverse Events Dashboard (2020-US)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight='860' maxwidth='1900' minheight='700' minwidth='1080' sizing-mode='range' />
+      <datasources>
+        <datasource caption='cleaned_statin_ae+' name='federated.0z584by1qv8k3h11t4nj408zaubz' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0z584by1qv8k3h11t4nj408zaubz'>
+        <column caption='Qualification' datatype='string' name='[Calculation_1530942401727475712]' role='dimension' type='nominal'>
+          <calculation class='tableau' formula='IFNULL([qualification_description], &apos;Unknown&apos;)' />
+        </column>
+        <column caption='Is Statin (Based on Generic Name)' datatype='string' name='[Calculation_4216706262604722176]' role='dimension' type='nominal'>
+          <calculation class='tableau' formula='IF CONTAINS([generic_name], &apos;ATORVASTATIN&apos;) THEN &apos;Atorvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;SIMVASTATIN&apos;) THEN &apos;Simvastatin&apos;&#10;ELSEIF CONTAINS([generic_name], &apos;ROSUVASTATIN&apos;) THEN &apos;Rosuvastatin&apos;&#10;ELSE &apos;Other&apos;&#10;&#10;END' />
+        </column>
+        <column caption='Drug Characterization Description' datatype='string' name='[drug_characterization_description]' role='dimension' type='nominal' />
+        <column-instance column='[Calculation_1530942401727475712]' derivation='None' name='[none:Calculation_1530942401727475712:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Calculation_4216706262604722176]' derivation='None' name='[none:Calculation_4216706262604722176:nk]' pivot='key' type='nominal' />
+        <column-instance column='[drug_characterization_description]' derivation='None' name='[none:drug_characterization_description:nk]' pivot='key' type='nominal' />
+        <column-instance column='[reaction]' derivation='None' name='[none:reaction:nk]' pivot='key' type='nominal' />
+        <column-instance column='[receive_date]' derivation='None' name='[none:receive_date:qk]' pivot='key' type='quantitative' />
+        <column caption='Reaction' datatype='string' name='[reaction]' role='dimension' type='nominal' />
+        <column caption='Receive Date' datatype='date' name='[receive_date]' role='dimension' type='ordinal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='8' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98072' id='34' param='vert' type-v2='layout-flow' w='98888' x='556' y='964'>
+            <zone fixed-size='54' h='6506' id='35' is-fixed='true' type-v2='title' w='98888' x='556' y='964'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='0' />
+                <format attr='background-color' value='#943e45' />
+              </zone-style>
+            </zone>
+            <zone h='4096' id='40' type-v2='text' w='98888' x='556' y='7470'>
+              <formatted-text>
+                <run fontcolor='#ffffff'>Disclamer: Data Source: FDA FAERS (OpenFDA), Nature: Primarily spontaneous reports, subject to bias and under-reporting, Limitation: Shows reported association, NOT causality, Cannot be used to calculate true side effect frequency or directly compare drug safety based on counts alone.</run>
+              </formatted-text>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='0' />
+                <format attr='background-color' value='#943e45' />
+              </zone-style>
+            </zone>
+            <zone h='87470' id='32' type-v2='layout-basic' w='98888' x='556' y='11566'>
+              <zone h='87470' id='14' param='vert' type-v2='layout-flow' w='64387' x='556' y='11566'>
+                <zone h='87470' id='12' type-v2='layout-basic' w='64387' x='556' y='11566'>
+                  <zone h='87470' id='7' param='vert' type-v2='layout-flow' w='13637' x='556' y='11566'>
+                    <zone h='87470' id='15' type-v2='layout-basic' w='13637' x='556' y='11566'>
+                      <zone h='13210' id='18' name='Most Common Reported Issues' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:receive_date:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='13637' x='556' y='38854'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='0' />
+                          <format attr='padding' value='8' />
+                          <format attr='background-color' value='#943e45' />
+                        </zone-style>
+                      </zone>
+                      <zone h='9381' id='43' mode='typeinlist' name='Most Common Reported Issues' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:reaction:nk]' type-v2='filter' values='database' w='13637' x='556' y='11566'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='8' />
+                        </zone-style>
+                      </zone>
+                      <zone h='17907' id='44' name='Most Common Reported Issues' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:drug_characterization_description:nk]' type-v2='filter' values='database' w='13637' x='556' y='20947'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                          <format attr='padding' value='2' />
+                        </zone-style>
+                      </zone>
+                      <zone h='18349' id='51' name='Most Common Reported Issues' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_4216706262604722176:nk]' type-v2='filter' values='database' w='13637' x='556' y='52064'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='28623' id='66' name='Source Breakdown' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_1530942401727475712:nk]' type-v2='filter' values='database' w='13637' x='556' y='70413'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='background-color' value='#943e45' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                  <zone h='87470' id='27' is-fixed='true' type-v2='layout-basic' w='25324' x='14193' y='11566'>
+                    <zone h='43719' id='9' param='vert' type-v2='layout-flow' w='25324' x='14193' y='11566'>
+                      <zone fixed-size='337' h='41566' id='17' is-fixed='true' name='Most Common Reported Issues' w='25324' x='14193' y='11566'>
+                        <layout-cache fixed-size-w='319' type-h='cell' type-w='fixed' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                    <zone h='43751' id='28' param='vert' type-v2='layout-flow' w='25324' x='14193' y='55285'>
+                      <zone h='35799' id='22' name='Serious vs Not-Serious' w='25324' x='14193' y='55285'>
+                        <layout-cache cell-count-h='1' non-cell-size-h='43' type-h='cell' type-w='fixed' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='7952' id='23' name='Serious vs Not-Serious' pane-specification-id='0' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:serious_description:nk]' type-v2='color' w='25324' x='14193' y='91084'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                  </zone>
+                  <zone h='43751' id='19' param='horz' type-v2='layout-flow' w='25426' x='39517' y='55285'>
+                    <zone h='43751' id='29' name='Source Breakdown' w='25426' x='39517' y='55285'>
+                      <layout-cache minwidth='260' type-h='cell' type-w='scalable' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                  <zone h='43719' id='20' name='Trend' w='25426' x='39517' y='11566'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+              <zone h='87470' id='26' param='horz' type-v2='layout-flow' w='34501' x='64943' y='11566'>
+                <zone h='87470' id='30' name='Mucle-Related Events' w='34501' x='64943' y='11566'>
+                  <layout-cache cell-count-w='11' minheight='363' non-cell-size-w='110' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontcolor='#ffffff'>Statin Medications: Adverse Events Dashboard (2020-US)</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1950' minheight='1950' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='68' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97714' id='67' param='vert' type-v2='layout-flow' w='98684' x='658' y='1143'>
+                <zone fixed-size='54' h='7714' id='35' type-v2='title' w='98684' x='658' y='1143'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#943e45' />
+                  </zone-style>
+                </zone>
+                <zone h='4857' id='40' type-v2='text' w='98684' x='658' y='8857'>
+                  <formatted-text>
+                    <run fontcolor='#ffffff'>Disclamer: Data Source: FDA FAERS (OpenFDA), Nature: Primarily spontaneous reports, subject to bias and under-reporting, Limitation: Shows reported association, NOT causality, Cannot be used to calculate true side effect frequency or directly compare drug safety based on counts alone.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#943e45' />
+                  </zone-style>
+                </zone>
+                <zone h='12858' id='18' name='Most Common Reported Issues' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:receive_date:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='13611' x='658' y='40277'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#943e45' />
+                  </zone-style>
+                </zone>
+                <zone h='9132' id='43' mode='checkdropdown' name='Most Common Reported Issues' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:reaction:nk]' type-v2='filter' values='database' w='13611' x='658' y='13714'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='17431' id='44' mode='checkdropdown' name='Most Common Reported Issues' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:drug_characterization_description:nk]' type-v2='filter' values='database' w='13611' x='658' y='22846'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='17861' id='51' mode='checkdropdown' name='Most Common Reported Issues' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_4216706262604722176:nk]' type-v2='filter' values='database' w='13611' x='658' y='53135'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='42556' id='17' is-fixed='true' name='Most Common Reported Issues' w='25272' x='14269' y='13714'>
+                  <layout-cache fixed-size-w='319' type-h='cell' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='42556' id='20' is-fixed='true' name='Trend' w='25373' x='39541' y='13714'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='85143' id='30' is-fixed='true' name='Mucle-Related Events' w='34428' x='64914' y='13714'>
+                  <layout-cache cell-count-w='13' minheight='463' non-cell-size-w='109' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='277' h='33158' id='22' is-fixed='true' name='Serious vs Not-Serious' w='25272' x='14269' y='56270'>
+                  <layout-cache cell-count-h='1' non-cell-size-h='43' type-h='cell' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='9429' id='23' name='Serious vs Not-Serious' pane-specification-id='0' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:serious_description:nk]' type-v2='color' w='25272' x='14269' y='89428'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='27861' id='66' mode='checkdropdown' name='Source Breakdown' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_1530942401727475712:nk]' type-v2='filter' values='database' w='13611' x='658' y='70996'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='42587' id='29' is-fixed='true' name='Source Breakdown' w='25373' x='39541' y='56270'>
+                  <layout-cache minwidth='260' type-h='cell' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{79B4024E-E8B3-4CD6-9D51-C9F774C6A1A5}' />
+    </dashboard>
+  </dashboards>
+  <windows pres-mode='true' source-height='30'>
+    <window class='worksheet' name='Most Common Reported Issues'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_4216706262604722176:nk]' type='filter' />
+            <card mode='typeinlist' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:reaction:nk]' type='filter' />
+            <card param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:receive_date:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{3E3EA169-BE3A-439E-9190-80870EF4D4C3}' />
+    </window>
+    <window class='worksheet' name='Trend'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{774BE390-A8F2-40AD-B13B-643710A0FB0E}' />
+    </window>
+    <window class='worksheet' name='Serious vs Not-Serious'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:serious_description:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CFA0C77D-4AA7-4138-A7E5-E915C24A1EC5}' />
+    </window>
+    <window class='worksheet' name='Source Breakdown'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_1530942401727475712:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0z584by1qv8k3h11t4nj408zaubz].[usr:Calculation_1427711453997498368:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{41A8AA1F-F5CE-45D3-BFF5-D290E3BBD779}' />
+    </window>
+    <window class='worksheet' name='Mucle-Related Events'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0z584by1qv8k3h11t4nj408zaubz].[none:Calculation_2219500564527845376:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2C5C4F75-7F2F-4DD0-85D9-DA7E6CD06997}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Most Common Reported Issues'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Mucle-Related Events'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Serious vs Not-Serious'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Source Breakdown'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Trend'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='51' />
+      <simple-id uuid='{7713A44D-4557-41BA-8706-BF6464CAD1AC}' />
+    </window>
+  </windows>
+</workbook>
