@@ -7,6 +7,7 @@ This project explores adverse event data for commonly prescribed statin medicati
 **Live Project Links:**
 
 *   **Interactive Tableau Dashboard:** [FAERS_Statin](https://public.tableau.com/app/profile/ullas.aradhya/viz/FAERS_Statin/Dashboard1?publish=yes)
+*   **Medium article**: [Visualizing Statin Safety: Creating an Adverse Event Dashboard Using OpenFDA (FAERS) Data](https://medium.com/@ullas97/visualizing-statin-safety-creating-an-adverse-event-dashboard-using-openfda-faers-data-e744070e6fde)
 
 ---
 
@@ -123,7 +124,7 @@ This analysis uses FAERS data, which has inherent limitations:
 │   ├── validation_queries.sql    # SQL queries used for validation against PostgreSQL
 │   └── validation_evidence/      # Snippets of validation evidence
 └── report/
-    └── medium_article.md         # Markdown version of the detailed blog post
+    └── project_summary.md         # Markdown version of the detailed blog post
 </code>
 </pre>
 
